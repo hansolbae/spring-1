@@ -4,12 +4,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>회원가입</title>
-		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="/board/css/style.css" />
 	</head>
 	<body>
 		<div id="member">
 			<section class="register">
-				<form action="#" method="POST">
+				<form action="/board/user/register" method="POST">
 					<section>
 						<table>
 							<caption>사이트 이용정보 입력</caption>
@@ -22,7 +22,7 @@
 							</tr>
 							<tr>
 								<td>비밀번호</td>
-								<td><input type="password" name="pass1" placeholder="비밀번호를 입력" required /></td>
+								<td><input type="password" name="pass" placeholder="비밀번호를 입력" required /></td>
 							</tr>
 							<tr>
 								<td>비밀번호확인</td>

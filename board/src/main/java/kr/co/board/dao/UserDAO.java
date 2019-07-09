@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import kr.co.board.vo.TermsVO;
+import kr.co.board.vo.UserVO;
 
 @Repository
 public class UserDAO {
@@ -17,8 +18,8 @@ public class UserDAO {
 		
 	}
 
-	public void register() {
-		
+	public void register(UserVO vo) {
+		mybatis.insert("mapper.sql.INSERT_USER", vo);
 	}
 
 	public TermsVO terms() {

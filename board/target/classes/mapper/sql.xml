@@ -3,11 +3,18 @@
 <mapper namespace="mapper.sql">
 	
 	<insert id="INSERT_USER">
-		INSERT INTO `USER3` SET
+		INSERT INTO `JSP_USER` SET
 		uid=#{uid},
+		pass=PASSWORD(#{pass}),		
 		name=#{name},
+		nick=#{nick},
+		email=#{email},
 		hp=#{hp},
-		age=#{age};	
+		zip=#{zip},
+		addr1=#{addr1},
+		addr2=#{addr2},
+		regip=#{regip},		
+		rdate=NOW();	
 	</insert>
 	
 	<select id="SELECT_TERMS" resultType="kr.co.board.vo.TermsVO">

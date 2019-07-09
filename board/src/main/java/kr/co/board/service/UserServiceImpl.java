@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.board.dao.UserDAO;
 import kr.co.board.vo.TermsVO;
+import kr.co.board.vo.UserVO;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -19,8 +20,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void register() {
-		
+	public void register(UserVO vo) {
+		dao.register(vo);
 	}
 
 	@Override
