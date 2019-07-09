@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.sql">
+	
+	<insert id="INSERT_USER">
+		INSERT INTO `USER3` SET
+		uid=#{uid},
+		name=#{name},
+		hp=#{hp},
+		age=#{age};	
+	</insert>
+	
+	<select id="SELECT_TERMS" resultType="kr.co.board.vo.TermsVO">
+		SELECT * FROM `JSP_TERMS`;
+	</select>
+	
+
+</mapper>
