@@ -29,4 +29,10 @@ public class UserServiceImpl implements UserService {
 		return dao.terms();
 	}
 
+	@Override
+	public int checkUid(String uid) {
+		return dao.checkUid(uid);
+	}
+
+
 }

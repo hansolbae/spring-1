@@ -21,5 +21,14 @@
 		SELECT * FROM `JSP_TERMS`;
 	</select>
 	
+	<select id="SELECT_CHECK_UID" resultType="int">
+		SELECT COUNT(uid) FROM `JSP_USER` WHERE uid=#{uid};
+	</select>
+	
+	
+	
+	
 
 </mapper>
+
+

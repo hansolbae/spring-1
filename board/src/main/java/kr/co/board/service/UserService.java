@@ -8,5 +8,7 @@ public interface UserService {
 	public void login();
 	public void register(UserVO vo);
 	public TermsVO terms();
+	
+	public int checkUid(String uid);
 
 }

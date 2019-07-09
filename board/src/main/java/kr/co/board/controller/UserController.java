@@ -1,15 +1,20 @@
 package kr.co.board.controller;
 
+
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.board.service.UserService;
-import kr.co.board.service.UserServiceImpl;
 import kr.co.board.vo.TermsVO;
 import kr.co.board.vo.UserVO;
 
@@ -50,7 +55,25 @@ public class UserController {
 		return "/user/terms";
 	}
 	
+	
+	@RequestMapping(value="/user/checkUid")
+	@ResponseBody
+	public Map<String, Integer> checkUid(String uid) {
+		
+		int result = service.checkUid(uid);
+		
+		// Map객체를 Json 데이터로 변환(jackson 라이브러리)
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("result", result);
+		
+		return map;
+	}
+	
 }
+
+
+
+
 
 
 
