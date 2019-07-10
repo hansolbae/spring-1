@@ -29,7 +29,7 @@
 					<c:forEach var="vo" items="${boardList}">
 						<tr>
 							<td>${vo.seq}</td>
-							<td><a href="#">${vo.title}</a>&nbsp;[${vo.comment}]</td>
+							<td><a href="/board/view?seq=${vo.seq}">${vo.title}</a>&nbsp;[${vo.comment}]</td>
 							<td>${vo.uid}</td>
 							<td>${vo.rdate.substring(2, 10)}</td>
 							<td>${vo.hit}</td>

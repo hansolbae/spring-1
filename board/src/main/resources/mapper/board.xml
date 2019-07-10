@@ -17,8 +17,22 @@
 		ORDER BY rdate DESC;	
 	</select>
 	
+	<select id="SELECT_BOARD_VIEW" resultType="kr.co.board.vo.BoardVO">
+		SELECT * FROM `JSP_BOARD` WHERE seq=#{seq};
+	</select>
 	
 
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
 
 

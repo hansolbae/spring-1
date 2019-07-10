@@ -35,4 +35,9 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
+	@Override
+	public BoardVO view(int seq) {
+		return dao.view(seq);
+	}
+
 }

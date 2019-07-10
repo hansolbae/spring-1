@@ -23,6 +23,10 @@ public class BoardDAO {
 	public List<BoardVO> list() {
 		return mybatis.selectList("mapper.board.SELECT_BOARD_LIST");
 	}
+	
+	public BoardVO view(int seq) {
+		return mybatis.selectOne("mapper.board.SELECT_BOARD_VIEW", seq);
+	}
 
 	public void modify() {
 		

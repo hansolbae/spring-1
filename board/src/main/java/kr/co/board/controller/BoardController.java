@@ -31,7 +31,11 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/view")
-	public String view() {
+	public String view(int seq, Model model) {
+		
+		BoardVO vo = service.view(seq);
+		model.addAttribute("vo", vo);
+		
 		return "/view";
 	}
 	
