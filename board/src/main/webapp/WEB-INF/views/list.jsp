@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,14 +24,17 @@
 						<td>날짜</td>
 						<td>조회</td>
 					</tr>
-				
-					<tr>
-						<td>1</td>
-						<td><a href="#">테스트 제목입니다.</a>&nbsp;[3]</td>
-						<td>홍길동</td>
-						<td>18-03-01</td>
-						<td>12</td>
-					</tr>
+					
+					
+					<c:forEach var="vo" items="${boardList}">
+						<tr>
+							<td>${vo.seq}</td>
+							<td><a href="#">${vo.title}</a>&nbsp;[${vo.comment}]</td>
+							<td>${vo.uid}</td>
+							<td>${vo.rdate.substring(2, 10)}</td>
+							<td>${vo.hit}</td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 			<!-- 페이징 -->

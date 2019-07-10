@@ -1,5 +1,7 @@
 package kr.co.board.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -18,8 +20,8 @@ public class BoardDAO {
 		mybatis.insert("mapper.board.INSERT_BOARD", vo);
 	}
 
-	public void list() {
-		
+	public List<BoardVO> list() {
+		return mybatis.selectList("mapper.board.SELECT_BOARD_LIST");
 	}
 
 	public void modify() {
@@ -31,3 +33,17 @@ public class BoardDAO {
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
