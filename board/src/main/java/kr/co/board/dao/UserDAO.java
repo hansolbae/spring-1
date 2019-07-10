@@ -14,8 +14,8 @@ public class UserDAO {
 	@Inject
 	private SqlSessionTemplate mybatis;
 
-	public void login() {
-		
+	public UserVO login(UserVO vo) {
+		return mybatis.selectOne("mapper.sql.SELECT_USER_LOGIN", vo);
 	}
 
 	public void register(UserVO vo) {

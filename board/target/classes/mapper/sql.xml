@@ -25,6 +25,11 @@
 		SELECT COUNT(uid) FROM `JSP_USER` WHERE uid=#{uid};
 	</select>
 	
+	<select id="SELECT_USER_LOGIN" resultType="kr.co.board.vo.UserVO">
+		SELECT * FROM `JSP_USER` 
+		WHERE uid=#{uid} AND pass=PASSWORD(#{pass});
+	</select>
+	
 	
 	
 	

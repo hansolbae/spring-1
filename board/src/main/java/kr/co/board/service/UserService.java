@@ -5,7 +5,7 @@ import kr.co.board.vo.UserVO;
 
 public interface UserService {
 	
-	public void login();
+	public UserVO login(UserVO vo);
 	public void register(UserVO vo);
 	public TermsVO terms();
 	

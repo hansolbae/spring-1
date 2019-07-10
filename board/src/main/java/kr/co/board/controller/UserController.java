@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,37 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
-	@RequestMapping("/user/login")
+	@RequestMapping(value="/user/login", method=RequestMethod.GET)
 	public String login() {
 		return "/user/login";
 	}
+	
+	@RequestMapping(value="/user/login", method=RequestMethod.POST)
+	public String login(HttpSession sess, UserVO vo) {
+		
+		// 데이터베이스 사용자확인
+		UserVO user = service.login(vo);
+		
+		// 세션처리
+		if(user != null) {
+			// 회원 일 경우
+			sess.setAttribute("user", user);
+			return "redirect:/list";
+		}else {
+			// 회원 아닐 경우
+			return "redirect:/user/login?result=fail";
+		}
+	}
+	
+	@RequestMapping("/user/logout")
+	public String logout(HttpSession sess) {
+		
+		sess.invalidate();
+		
+		return "redirect:/user/login";
+	}
+	
+	
 	
 	@RequestMapping(value="/user/register", method=RequestMethod.GET)
 	public String register() {
