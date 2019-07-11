@@ -28,8 +28,8 @@ public class BoardDAO {
 		return mybatis.selectOne("mapper.board.SELECT_BOARD_VIEW", seq);
 	}
 
-	public void modify() {
-		
+	public void modify(BoardVO vo) {
+		mybatis.update("mapper.board.UPDATE_BOARD", vo);
 	}
 
 	public void delete() {

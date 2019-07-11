@@ -57,6 +57,24 @@ public class BoardController {
 		return "redirect:/list";
 	}
 	
+	@RequestMapping(value="/modify", method=RequestMethod.GET)
+	public String modify(int seq, Model model) {
+		
+		BoardVO vo = service.view(seq);
+		model.addAttribute("vo", vo);
+		
+		return "/modify";
+	}
+	
+	@RequestMapping(value="/modify", method=RequestMethod.POST)
+	public String modify(BoardVO vo) {
+		
+		service.modify(vo);		
+				
+		return "redirect:/view?seq="+vo.getSeq();
+	}
+	
+	
 }
 
 

@@ -9,7 +9,7 @@ public interface BoardService {
 	public void write(BoardVO vo);
 	public List<BoardVO> list();
 	public BoardVO view(int seq);
-	public void modify();
+	public void modify(BoardVO vo);
 	public void delete();
 	
 	

@@ -26,8 +26,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void modify() {
-		
+	public void modify(BoardVO vo) {
+		dao.modify(vo);
 	}
 
 	@Override
