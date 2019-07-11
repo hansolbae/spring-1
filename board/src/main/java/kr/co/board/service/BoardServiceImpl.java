@@ -21,8 +21,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardVO> list() {
-		return dao.list();
+	public List<BoardVO> list(int start) {
+		return dao.list(start);
 	}
 
 	@Override
@@ -40,4 +40,81 @@ public class BoardServiceImpl implements BoardService {
 		return dao.view(seq);
 	}
 
+	@Override
+	public int getTotalCount() {
+		return dao.getTotalCount();
+	}
+
+	@Override
+	public int getPageEnd(int total) {
+		
+		int pageEnd = 0;
+		
+		if(total % 10 == 0) {
+			pageEnd = total / 10;
+		}else {
+			pageEnd = (total / 10) + 1;
+		}
+		
+		return pageEnd;
+	}
+
+	@Override
+	public int getLimitStart(String pg) {
+		if(pg == null) {
+			return 0;
+		}else {
+			int num = Integer.parseInt(pg); 
+			return (num - 1) * 10;
+		}
+	}
+
+	@Override
+	public int getPageCountStart(int total, int limit) {
+		return (total - limit)+1;
+	}
+
+	@Override
+	public int[] getPageGroupStartEnd(String pg, int pageEnd) {
+		
+		int[] groupStartEnd = new int[2];
+		
+		int current = 0;
+		
+		if(pg == null) {
+			current = 1;
+		}else {
+			current = Integer.parseInt(pg);
+		}
+		
+		int currentGroup = (int) Math.ceil(current/10.0);
+		
+		int groupStart = (currentGroup - 1) * 10 + 1;
+		int groupEnd   = currentGroup * 10;
+		
+		if(groupEnd > pageEnd) {
+			groupEnd = pageEnd;
+		}
+		
+		groupStartEnd[0] = groupStart;
+		groupStartEnd[1] = groupEnd;
+		
+		return groupStartEnd;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
