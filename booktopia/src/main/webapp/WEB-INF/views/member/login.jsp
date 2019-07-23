@@ -24,8 +24,8 @@
         </div>
         <div id="head_link">
           <ul>
-            <li><a href="/booktopia/member/loginForm.do">로그인</a></li>
-            <li><a href="/booktopia/member/memberForm.do">회원가입</a></li>
+            <li><a href="/booktopia/member/login">로그인</a></li>
+            <li><a href="/booktopia/member/register">회원가입</a></li>
             <li><a href="#">고객센터</a></li>
           </ul>
         </div>
@@ -115,7 +115,7 @@
             <br><br>
             <a href="#">아이디 찾기</a> |
             <a href="#">비밀번호 찾기</a> |
-            <a href="/bookshop01/member/addMember.do">회원가입</a> |
+            <a href="/booktopia/member/register">회원가입</a> |
             <a href="#">고객 센터</a>
           </form>
         </div>

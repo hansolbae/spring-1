@@ -6,5 +6,6 @@
 	<mappers>
 		<mapper resource="./mapper/sql.xml"/>
 		<mapper resource="./mapper/board.xml"/>
+		<mapper resource="./mapper/member.xml"/>
 	</mappers>
 </configuration>
