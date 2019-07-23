@@ -12,6 +12,9 @@
 	</insert>
 	
 	
+	
+	
+	
 	<update id="UPDATE_BOARD">
 		UPDATE `JSP_BOARD` SET title=#{title}, content=#{content}
 		WHERE seq=#{seq};	
