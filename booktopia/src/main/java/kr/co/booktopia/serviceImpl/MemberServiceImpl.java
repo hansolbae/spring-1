@@ -18,7 +18,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public MemberVO login(Map<String, String> loginMap) {
-		return null;
+		return dao.login(loginMap);
 	}
 
 	@Override
